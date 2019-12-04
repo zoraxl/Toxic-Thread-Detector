@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<header>
+</header>
+<p style="color:blue;font-size:20"><b>Results for Comment</b></p>
+<p style="color:black;font-size:8">The following are the probability of each type of verbal violence. </p>
+
+
+
+
+<div class="results">
+    <table border = 1>
+        {% for key, value in result.items() %}
+        <tr>
+            <th> {{ key }} </th>
+            <td> {{ value }} </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    {% if comments|length == 0 %}
+	    <h2 style="color:blue;">Your thread is good to go! </h2>
+	{% else%}
+        <h2 style="color:blue;"> Your thread is violating because it is
+        {% for c in comments %}
+             {{c}}
+        {% endfor %}
+        .</h2>
+	{% endif %}
+
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<html>
+<head>
+	<title>Home</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+
+
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+            Group Member: Xiaotong Li, Runzi Qiang
+            ADS-SEC1-Proj5: Toxic Thread Detector
+            LSTM Model + GloVe
+		</div>
+		<h2>Toxic Thread Detector</h2>
+
+	</div>
+	</header>
+
+<!--    <div class="w3-container w3-teal">-->
+<!--  <h2>Input Form</h2>-->
+<!--</div>-->
+
+<!--<form class="w3-container">-->
+<!--  <label class="w3-text-teal"><b>First Name</b></label>-->
+<!--  <input class="w3-input w3-border w3-light-grey" type="text">-->
+
+<!--  <label class="w3-text-teal"><b>Last Name</b></label>-->
+<!--  <input class="w3-input w3-border w3-light-grey" type="text">-->
+
+<!--  <button class="w3-btn w3-blue-grey">Register</button>-->
+<!--</form>-->
+
+
+	<div class="w3-container w3-teal">
+
+		<form action="{{ url_for('predict')}}" method="POST">
+
+<!--		<textarea name="message" rows="4" cols="50"></textarea>-->
+<!--		<br/>-->
+
+<!--		<input type="submit" class="btn-info" value="predict">-->
+            <label class="w3-text-teal"><b>Message</b></label>
+            <input name = "message", rows = "4" cols = "50" class="w3-input w3-border w3-light-grey" type="text">
+            <button class="w3-btn w3-blue-grey">Check</button>
+	    </form>
+
+	</div>
+
+    {% include 'result.html' %}
+
+
+
+</body>
+</html>
